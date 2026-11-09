@@ -1,0 +1,368 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Zara Beauty Parlour</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Zara Beauty Parlour, a ladies-only beauty parlour in Hyderabad. Bridal makeup, hair, facials, waxing, nails, mehendi and body care.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: ivory/blush editorial salon page. Serif display, rose-gold rules, plum text, placeholder photo slots ready for real images. */
+:root{
+  --bg:#fbf5f1; --surface:#fffaf7; --card:#ffffff; --blush:#f6dfdb; --rose:#b76e79; --rose-d:#8f4a58;
+  --gold:#c19a5b; --gold-d:#8a6a2f; --plum:#3b1f2e; --muted:#6f5a61; --line:#ecd9d4; --on-accent:#ffffff;
+  --ph1:#f3cfd0; --ph2:#e7b9a8; --shadow:0 10px 30px rgba(120,60,70,.12);
+  --display:"Cormorant Garamond",Georgia,serif; --body:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1c1118; --surface:#251820; --card:#2c1d26; --blush:#3a2430; --rose:#e59aa6; --rose-d:#f0b4bd; --gold:#d9b36e; --gold-d:#e6c88e;
+  --plum:#f7e9e6; --muted:#c3a9b0; --line:#43303a; --on-accent:#2a1420; --ph1:#4a2c3a; --ph2:#5c3a40; --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1c1118; --surface:#251820; --card:#2c1d26; --blush:#3a2430; --rose:#e59aa6; --rose-d:#f0b4bd; --gold:#d9b36e; --gold-d:#e6c88e;
+  --plum:#f7e9e6; --muted:#c3a9b0; --line:#43303a; --on-accent:#2a1420; --ph1:#4a2c3a; --ph2:#5c3a40; --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--plum);font:400 16px/1.65 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,8vw,4.6rem)} h2{font-size:clamp(2rem,5vw,3rem)} h3{font-size:1.5rem}
+p{margin:0}
+.wrap{max-width:1120px;margin-inline:auto}
+section{padding-block:72px}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);font-weight:500}
+.lead{color:var(--muted);max-width:60ch}
+.head{display:grid;gap:12px;margin-bottom:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 24px;border-radius:999px;border:1.5px solid transparent;font:500 .95rem var(--body);cursor:pointer;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#2a1a0c}
+.btn-rose{background:var(--rose);color:var(--on-accent)}
+.btn-line{border-color:var(--rose);color:var(--rose-d);background:transparent}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;max-width:1120px;margin-inline:auto}
+.logo{font-family:var(--display);font-size:1.6rem;font-weight:700;text-decoration:none;color:var(--plum)}
+.logo span{color:var(--rose)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:.92rem;color:var(--muted)} nav a:hover{color:var(--rose-d)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;color:var(--plum);cursor:pointer;font-size:1.3rem}
+.nav-book{display:inline-flex}
+@media(max-width:900px){
+  .burger{display:block} .nav-book{display:none}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-left,0px)) 20px;display:none}
+  nav.open{display:block} nav ul{flex-direction:column;gap:0} nav a{display:block;padding:12px 0;font-size:1.05rem}
+}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:56px 72px}
+.hero .copy{display:grid;gap:22px;min-width:0}
+.hero em{color:var(--rose);font-style:italic}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:6px 0 0;list-style:none}
+.badges li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--muted)}
+.badges li::before{content:"✓ ";color:var(--gold-d)}
+@media(max-width:800px){.hero{grid-template-columns:1fr}}
+
+/* photo slots */
+.ph{position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;border-radius:18px;color:var(--rose-d);background:linear-gradient(145deg,var(--ph1),var(--ph2));isolation:isolate}
+.ph::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.35),transparent 55%);z-index:-1}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph svg{width:44px;height:44px;opacity:.85}
+.ph small{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-top:8px;padding-inline:12px;opacity:.9}
+.hero .ph{aspect-ratio:4/5;max-width:100%;border-radius:200px 200px 24px 24px;box-shadow:var(--shadow);border:6px solid var(--card)}
+
+/* about */
+.about{background:var(--surface);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.about .in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1120px;margin-inline:auto}
+.about .ph{aspect-ratio:1/1}
+.about .copy{display:grid;gap:16px;min-width:0}
+.counters{display:flex;flex-wrap:wrap;gap:28px;margin-top:8px}
+.counters b{display:block;font:600 2.4rem/1 var(--display);color:var(--rose-d)}
+.counters span{font-size:.85rem;color:var(--muted)}
+@media(max-width:800px){.about .in{grid-template-columns:1fr}}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;min-width:0}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ph{border-radius:0;aspect-ratio:16/10}
+.card .body{display:grid;gap:10px;padding:20px;flex:1;align-content:start}
+.card p{color:var(--muted);font-size:.93rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:4px 0 0;list-style:none}
+.chips li{font-size:.76rem;background:var(--blush);color:var(--plum);border-radius:999px;padding:3px 10px}
+.card .more{margin-top:auto;padding:0 20px 20px}
+.card .more a{color:var(--rose-d);font-weight:500;text-decoration:none;border-bottom:1.5px solid var(--gold)}
+
+/* packages */
+.pk{background:var(--surface);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.pk .wrap{max-width:1120px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:grid;gap:14px;align-content:start;position:relative;min-width:0}
+.plan.pop{border:2px solid var(--gold);box-shadow:var(--shadow)}
+.tag{position:absolute;top:-13px;left:24px;background:var(--gold);color:#2a1a0c;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.price{font:600 2rem/1 var(--display);color:var(--rose-d)}
+.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.93rem;color:var(--muted)}
+.plan li::before{content:"✓ ";color:var(--gold-d)}
+.note{margin-top:18px;color:var(--muted);font-size:.88rem}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+.why div{display:grid;gap:8px;padding-top:16px;border-top:1.5px solid var(--gold)}
+.why p{color:var(--muted);font-size:.93rem}
+
+/* gallery */
+.gal{columns:3 220px;column-gap:14px}
+.gal button{display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid}
+.gal .ph{width:100%}
+/* testimonials */
+.tm{background:var(--blush);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.tm .wrap{max-width:760px;text-align:center;display:grid;gap:20px;justify-items:center}
+.stars{color:var(--gold-d);letter-spacing:.2em}
+.quote{font:500 clamp(1.35rem,3.6vw,1.9rem)/1.4 var(--display);min-height:7.5em;display:grid;align-content:center}
+.who{font-size:.9rem;color:var(--muted)}
+.dots{display:flex;gap:8px;align-items:center}
+.dots button{width:44px;height:44px;border-radius:50%;border:1px solid var(--rose);background:transparent;color:var(--rose-d);cursor:pointer;font-size:1.1rem}
+.sample{font-size:.78rem;color:var(--muted);font-style:italic}
+
+/* offer */
+.offer{padding-block:56px}
+.offer .box{background:linear-gradient(120deg,var(--rose),var(--rose-d));color:#fff;border-radius:24px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.offer h2{color:#fff;max-width:20ch} .offer p{opacity:.92;margin-top:8px}
+.offer .btn{background:#fff;color:#6b2c3a}
+
+/* faq */
+.faq{max-width:760px;margin-inline:auto;display:grid;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 20px}
+summary{cursor:pointer;font-weight:500;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--rose-d);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding-bottom:16px}
+
+/* contact */
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.ct{grid-template-columns:1fr}}
+form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;gap:14px;min-width:0}
+label{font-size:.85rem;color:var(--muted);display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--plum);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;min-height:46px;width:100%}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:480px){.row2{grid-template-columns:1fr}}
+.info{display:grid;gap:18px;min-width:0}
+.info dt{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d)}
+.info dd{margin:2px 0 0}
+.phone{font:600 1.7rem var(--display);color:var(--rose-d);user-select:all}
+#result{display:none;background:var(--blush);border-radius:12px;padding:14px;gap:10px}
+#result.show{display:grid}
+
+footer{border-top:1px solid var(--line);padding-block:40px 110px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;max-width:1120px;margin-inline:auto}
+footer ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;font-size:.9rem;color:var(--muted)}
+footer a{text-decoration:none} footer a:hover{color:var(--rose-d)}
+.copy-r{grid-column:1/-1;font-size:.82rem;color:var(--muted)}
+
+/* floating */
+.float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:10px;z-index:55}
+.float a,.float button{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;text-decoration:none;box-shadow:var(--shadow);border:0;cursor:pointer;font-size:1.2rem}
+.wa{background:#25a561;color:#fff}.up{background:var(--card);color:var(--plum);border:1px solid var(--line)!important}
+
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(20,8,14,.85);display:none;place-items:center;z-index:80;padding:24px}
+#lb.show{display:grid}
+#lb .ph{width:min(560px,100%);aspect-ratio:4/3}
+#lb button{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border-radius:50%;border:0;font-size:1.2rem;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="#home">Zara <span>Beauty</span> Parlour</a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#packages">Packages</a></li>
+        <li><a href="#gallery">Gallery</a></li><li><a href="#why">Why Us</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold nav-book" href="#contact">Book Now</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+<section class="hero" id="home" style="padding-block:56px 72px">
+  <div class="copy">
+    <p class="eyebrow">Ladies-only beauty parlour · Hyderabad</p>
+    <h1>Where beauty meets <em>elegance</em></h1>
+    <p class="lead">Swagatam to Zara Beauty Parlour. From everyday glow-ups to your bridal day, our beauticians care for your hair, skin, nails and makeup in a calm, private space made for women.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#contact">Book Appointment</a>
+      <a class="btn btn-line" href="#contact">Call +91-9381371765</a>
+    </div>
+    <ul class="badges"><li>100% hygienic</li><li>Expert beauticians</li><li>Premium products</li></ul>
+  </div>
+  <div class="ph" data-slot="hero" role="img" aria-label="Woman receiving a facial treatment at a beauty parlour"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><small>Hero photo: woman enjoying a facial</small></div></div>
+</section>
+</div>
+
+<section class="about" id="about"><div class="in">
+  <div class="ph" data-slot="about" role="img" aria-label="Warm, clean interior of the parlour"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg><small>Photo: parlour interior</small></div></div>
+  <div class="copy">
+    <p class="eyebrow">About us</p>
+    <h2>A private space where you can relax</h2>
+    <p class="lead">Zara Beauty Parlour was started with one idea: every woman should feel comfortable, safe and well looked after while she gets ready. We keep the parlour ladies-only, use branded products, and listen first, so your look suits you.</p>
+    <p class="lead">Whether it is a quick threading before work or a full bridal package, you get the same careful, friendly service.</p>
+    <div class="counters">
+      <div><b>2,500+</b><span>Happy clients*</span></div>
+      <div><b>8+</b><span>Years of experience*</span></div>
+      <div><b>40+</b><span>Services offered*</span></div>
+    </div>
+    <p class="sample">*Sample numbers. Replace with your real figures.</p>
+  </div>
+</div></section>
+
+<div class="wrap">
+<section id="services">
+  <div class="head"><p class="eyebrow">Our services</p><h2>Everything for your hair, skin and style</h2><p class="lead">Pick a service and message us to book. Not sure what suits you? We will help you choose at a free consultation.</p></div>
+  <div class="grid" id="svc"></div>
+</section>
+</div>
+
+<section class="pk" id="packages"><div class="wrap">
+  <div class="head"><p class="eyebrow">Packages</p><h2>Save more with a package</h2></div>
+  <div class="plans">
+    <div class="plan"><h3>Party Ready</h3><div class="price">₹1,999 – 3,500</div><ul><li>Hair styling</li><li>Party makeup</li><li>Manicure</li></ul><a class="btn btn-line" href="#contact">Book this</a></div>
+    <div class="plan pop"><span class="tag">Most popular</span><h3>Bridal Glow</h3><div class="price">₹15,000 – 35,000</div><ul><li>HD or airbrush bridal makeup</li><li>Hairstyle and saree draping</li><li>Trial session</li><li>Mehendi add-on available</li></ul><a class="btn btn-gold" href="#contact">Book this</a></div>
+    <div class="plan"><h3>Pre-Bridal</h3><div class="price">₹6,000 – 12,000</div><ul><li>Facials and de-tan</li><li>Full body wax and polishing</li><li>Hair spa and mani-pedi</li></ul><a class="btn btn-line" href="#contact">Book this</a></div>
+    <div class="plan"><h3>Monthly Glam</h3><div class="price">₹1,499 – 2,500</div><ul><li>Facial or cleanup</li><li>Threading and waxing</li><li>Head massage</li></ul><a class="btn btn-line" href="#contact">Book this</a></div>
+  </div>
+  <p class="note">Prices are sample ranges you can edit. Call for the best price.</p>
+</div></section>
+
+<div class="wrap">
+<section id="why">
+  <div class="head"><p class="eyebrow">Why choose us</p><h2>Care you can trust</h2></div>
+  <div class="why">
+    <div><h3>Trained beauticians</h3><p>Experienced hands for hair, skin, makeup and bridal work.</p></div>
+    <div><h3>Branded, safe products</h3><p>We use trusted brands and check skin type before every treatment.</p></div>
+    <div><h3>Sterilised tools</h3><p>Tools are cleaned and sterilised between clients, and disposables are used where possible.</p></div>
+    <div><h3>Ladies-only and private</h3><p>A comfortable space where you can relax without a worry.</p></div>
+    <div><h3>Fair pricing</h3><p>Clear rates and packages, with no surprise add-ons.</p></div>
+    <div><h3>Personal consultation</h3><p>We talk through your skin, hair and occasion before we begin.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="head"><p class="eyebrow">Gallery</p><h2>A look at our work</h2><p class="lead">Tap a photo to enlarge it. Swap in your own photos for the final page.</p></div>
+  <div class="gal" id="gal"></div>
+</section>
+</div>
+
+<section class="tm" id="testimonials"><div class="wrap">
+  <p class="eyebrow">Testimonials</p>
+  <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+  <blockquote class="quote" id="q" style="margin:0"></blockquote>
+  <p class="who" id="who"></p>
+  <div class="dots"><button id="prev" aria-label="Previous review">←</button><span id="count" class="who"></span><button id="next" aria-label="Next review">→</button></div>
+  <p class="sample">Sample reviews. Replace with real client reviews.</p>
+</div></section>
+
+<div class="wrap">
+<section class="offer"><div class="box">
+  <div><p class="eyebrow" style="color:#ffe3c0">Special offer</p><h2>First visit? Enjoy 20% off</h2><p>Mention this offer when you book. Terms can be edited.</p></div>
+  <a class="btn" href="#contact">Claim Offer</a>
+</div></section>
+
+<section id="faq">
+  <div class="head"><p class="eyebrow">FAQ</p><h2>Good to know</h2></div>
+  <div class="faq">
+    <details><summary>How do I book an appointment?</summary><p>Fill the form below, call +91-9381371765 or message us on WhatsApp. We will confirm your slot.</p></details>
+    <details><summary>What are your timings?</summary><p>Open every day, 10:00 AM to 8:00 PM (edit as needed). Bridal bookings can start earlier on request.</p></details>
+    <details><summary>Do you offer a bridal trial?</summary><p>Yes. A trial helps us finalise your look before the wedding. Please book at least two weeks ahead.</p></details>
+    <details><summary>How do you maintain hygiene?</summary><p>Tools are sterilised, we use fresh disposables where needed, and surfaces are cleaned between clients.</p></details>
+    <details><summary>Which payment methods do you accept?</summary><p>Cash and UPI (edit to match what you accept).</p></details>
+    <details><summary>Do you offer home service?</summary><p>For bridal and party bookings, ask us about home service in Hyderabad. Charges may apply.</p></details>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="head"><p class="eyebrow">Contact and booking</p><h2>Reserve your visit</h2></div>
+  <div class="ct">
+    <form id="f">
+      <label for="n">Your name<input id="n" required autocomplete="name"></label>
+      <label for="p">Phone number<input id="p" type="tel" required autocomplete="tel" placeholder="+91"></label>
+      <label for="s">Service<select id="s"></select></label>
+      <div class="row2">
+        <label for="d">Preferred date<input id="d" type="date"></label>
+        <label for="t">Preferred time<input id="t" type="time"></label>
+      </div>
+      <label for="m">Message<textarea id="m" rows="3"></textarea></label>
+      <button class="btn btn-gold" type="submit">Prepare my booking</button>
+      <div id="result"><span>Your details are ready. Send them to us on WhatsApp to finish booking.</span><a class="btn btn-rose" id="wal" target="_blank" rel="noopener" href="#">Send on WhatsApp</a></div>
+    </form>
+    <dl class="info">
+      <div><dt>Call or WhatsApp</dt><dd class="phone">+91-9381371765</dd><dd style="margin-top:10px"><a class="btn btn-rose" target="_blank" rel="noopener" href="https://wa.me/919381371765">Chat on WhatsApp</a></dd></div>
+      <div><dt>Address</dt><dd>[Add full street address and area]<br>Hyderabad, Telangana, India</dd><dd style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=Zara+Beauty+Parlour+Hyderabad" target="_blank" rel="noopener" style="color:var(--rose-d)">Open in Google Maps</a></dd></div>
+      <div><dt>Opening hours</dt><dd>Every day, 10:00 AM – 8:00 PM</dd></div>
+    </dl>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <div><a class="logo" href="#home">Zara <span>Beauty</span> Parlour</a><p class="lead" style="margin-top:10px;font-size:.9rem">A ladies-only beauty parlour in Hyderabad for hair, skin, makeup and bridal care.</p></div>
+  <div><b>Quick links</b><ul><li><a href="#services">Services</a></li><li><a href="#packages">Packages</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+  <div><b>Popular services</b><ul><li>Bridal makeup</li><li>Hair spa and keratin</li><li>Facials and de-tan</li><li>Mehendi</li></ul></div>
+  <div><b>Follow us</b><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="https://wa.me/919381371765" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="#">YouTube</a></li></ul></div>
+  <p class="copy-r">© 2026 Zara Beauty Parlour, Hyderabad. All rights reserved.</p>
+</footer>
+
+<div class="float">
+  <button class="up" id="up" aria-label="Back to top">↑</button>
+  <a class="wa" href="https://wa.me/919381371765" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆</a>
+</div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo preview"><button id="lbx" aria-label="Close">✕</button><div class="ph" id="lbph"></div></div>
+
+<script>
+const GLYPH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>';
+const ph=(t,a)=>`<div class="ph" data-slot="${a}" role="img" aria-label="${t}"><div>${GLYPH}<small>Photo: ${a}</small></div></div>`;
+const SERVICES=[
+ ["Hair","Cuts, colour, smoothening and scalp care for every hair type.",["Haircut & styling","Hair spa","Colour & highlights","Keratin & smoothening","Rebonding","Dandruff & hair fall treatment","Hair extensions","Blow dry"]],
+ ["Facial & Skin Care","Glow treatments matched to your skin type.",["Classic facial","Fruit facial","Gold facial","Diamond facial","Anti-ageing facial","De-tan","Skin brightening","Cleanup","Bleach"]],
+ ["Waxing & Threading","Gentle, clean hair removal for face and body.",["Full arms","Full legs","Underarms","Full body (regular, chocolate, Rica)","Eyebrow & upper lip","Forehead & face threading"]],
+ ["Manicure & Pedicure","Soft hands and feet, from classic to luxury spa.",["Classic","Spa","Luxury","Nail art","Gel nails","Nail extensions"]],
+ ["Bridal & Party Makeup","Looks that last all day and photograph beautifully.",["HD makeup","Airbrush makeup","Engagement & reception looks","Saree draping","Hairstyling"]],
+ ["Mehendi","Intricate designs for brides and celebrations.",["Bridal mehendi","Party mehendi"]],
+ ["Body Care","Unwind with relaxing, skin-smoothing treatments.",["Body massage","Body polishing","Body spa"]],
+ ["Piercing & Shaping","Quick, careful finishing touches.",["Ear piercing","Eyebrow shaping"]],
+ ["Pre-Bridal & More","Complete care before the big day, and everyday pampering.",["Pre-bridal packages","Head massage","Event makeup"]]
+];
+document.getElementById('svc').innerHTML=SERVICES.map(([t,d,l])=>`<article class="card">${ph(t+' service',t)}<div class="body"><h3>${t}</h3><p>${d}</p><ul class="chips">${l.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="more"><a href="#contact" data-svc="${t}">Book →</a></div></article>`).join('');
+document.getElementById('s').innerHTML='<option>Not sure yet</option>'+SERVICES.map(s=>`<option>${s[0]}</option>`).join('');
+document.querySelectorAll('[data-svc]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('s').value=a.dataset.svc}));
+
+const G=[["Bridal look","3/4"],["Hair colour","1/1"],["Nail art","4/3"],["Mehendi","3/4"],["Salon interior","4/3"],["Facial glow","1/1"],["Party makeup","3/4"],["Hair styling","4/3"],["Manicure","1/1"]];
+const gal=document.getElementById('gal');
+gal.innerHTML=G.map(([t,r],i)=>`<button data-i="${i}" aria-label="Enlarge ${t}"><div class="ph" style="aspect-ratio:${r}"><div>${GLYPH}<small>Photo: ${t}</small></div></div></button>`).join('');
+const lb=document.getElementById('lb');
+gal.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const g=G[b.dataset.i];document.getElementById('lbph').innerHTML=`<div>${GLYPH}<small>Photo: ${g[0]}</small></div>`;lb.classList.add('show')});
+lb.addEventListener('click',()=>lb.classList.remove('show'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('show')});
+
+const R=[["Zara made my engagement look so natural. The makeup lasted through the whole evening and I felt very comfortable.","Sana, Banjara Hills"],["Clean parlour, friendly staff and a lovely hair spa. I now come every month.","Priya, Madhapur"],["Booked the pre-bridal package. Everything was explained clearly and my skin looked great.","Ayesha, Tolichowki"],["Quick threading and facial before office. On time and very hygienic.","Lakshmi, Gachibowli"],["Beautiful mehendi and nails for Eid. Highly recommended.","Fatima, Mehdipatnam"]];
+let ri=0;const q=document.getElementById('q'),w=document.getElementById('who'),c=document.getElementById('count');
+function show(){q.textContent='“'+R[ri][0]+'”';w.textContent=R[ri][1];c.textContent=(ri+1)+' / '+R.length}
+document.getElementById('next').onclick=()=>{ri=(ri+1)%R.length;show()};
+document.getElementById('prev').onclick=()=>{ri=(ri+R.length-1)%R.length;show()};
+setInterval(()=>{ri=(ri+1)%R.length;show()},7000);show();
+
+const nav=document.getElementById('nav'),bg=document.getElementById('burger');
+bg.onclick=()=>{const o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');bg.setAttribute('aria-expanded',false)}});
+document.getElementById('up').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+document.getElementById('f').addEventListener('submit',e=>{
+  e.preventDefault();const v=id=>document.getElementById(id).value.trim();
+  const msg=`Hello Zara Beauty Parlour, I would like to book an appointment.%0AName: ${encodeURIComponent(v('n'))}%0APhone: ${encodeURIComponent(v('p'))}%0AService: ${encodeURIComponent(v('s'))}%0ADate: ${encodeURIComponent(v('d')||'Flexible')}%0ATime: ${encodeURIComponent(v('t')||'Flexible')}%0AMessage: ${encodeURIComponent(v('m')||'-')}`;
+  document.getElementById('wal').href='https://wa.me/919381371765?text='+msg;
+  document.getElementById('result').classList.add('show');
+});
+</script>
+
+</body></html>
